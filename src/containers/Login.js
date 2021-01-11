@@ -23,14 +23,12 @@ class Login extends Component {
         }
       }
     } catch (e) {
-      console.log("error", e.response.data);
       this.props.loginError(e.response.data.error.message);
     }
   };
 
   renderError() {
     if (this.props.errorMessage) {
-      console.log(this.props.errorMessage);
       return (
         <div className="alert alert-danger p-1">Invalid login credentials</div>
       );
@@ -40,7 +38,6 @@ class Login extends Component {
 
   render() {
     if (this.props.isLoggedin) {
-      console.log("About to navigate");
       return <Redirect to="/dashboard" />; // redirect
     }
 
